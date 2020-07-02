@@ -12,6 +12,8 @@ services:
     # Persist this data between sessions
     volumes:
       - ./postgres/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: "trust"
 
   # Required for activity metadata
   amqp:
